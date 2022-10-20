@@ -7,5 +7,90 @@
 </head>
 <body>
   {{ content | safe }}
+  <style>
+    html {
+      font-size: 21px;
+      font-family: helvetica, arial, sans-serif;
+    }
+    a {
+      display: inline-block;
+      padding: 0.6ch 1ch 0.4ch;
+      background-color: var(--state, cornflowerblue);
+      color: white;
+      text-decoration: none;
+      line-height: 1.5;
+    }
+    [style*="#a6f1a6"] {
+      color: #121314;
+    }
+
+    [href]:not([href^="http"]),
+    [href^="http"]:not([target]),
+    [target]:not([target="_blank"]),
+    [target="_blank"][rel*="noopener"] {
+      --state: #3E3;
+    }
+
+    [target="_blank"]:not([rel*="noopener"]) {
+      --state: #E33;
+    }
+
+  </style>
+  <script type="module">
+    const STATES = {
+      INITIAL: "cornflowerblue",
+      ERROR: "#E33",
+      SUCCESS: "#3E3",
+      PARTIAL: "#a6f1a6"
+    };
+
+    const REL = {
+      noopener: 1,
+      nofollower: 0,
+      noreferrer: 1
+    };
+
+    const TARGETS = [
+      "_parent",
+      "_self",
+      "_top"
+    ]
+
+    const linksToTest = document.querySelectorAll('a[target]');
+
+    const setState = (el, state) => el.style.setProperty('--state', STATES[state]);
+
+    for (const link of linksToTest) {
+      if (link.href.indexOf('http') === -1) {
+        // setState(link, "INITIAL");
+        continue;
+      }
+      
+      // This means that the target values are safe, don't need transforming
+      if (link.hasAttribute('target') && TARGETS.includes(link.target.trim().toLowerCase())) {
+        // setState(link, "INITIAL");
+        continue;
+      }
+
+      // Link from here on out
+      // - has target attribute
+      // - needs the rel attribute to be noopener
+      // - can have nofollower
+      // - can have noreferrer
+      const relValues = link.rel.split(' ');
+      
+      if (!relValues.includes('noopener')) {
+        // setState(link, 'ERROR');
+        continue;
+      }
+
+      if (!relValues.includes('nofollower') || !relValues.includes('noreferrer')) {
+        // setState(link, 'PARTIAL');
+        continue;
+      }
+
+      // setState(link, 'SUCCESS');
+    }
+  </script>
 </body>
 </html>
