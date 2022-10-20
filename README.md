@@ -51,6 +51,10 @@ Check out this [article](https://jakearchibald.com/2016/performance-benefits-of-
 - [ ] Review dependencies and see what can be removed
 - [ ] ???
 
+## See it in action
+
+[It is currently in use here.](https://resourcesandhelp.netlify.app)
+
 ## Credits
 
 [11ty](https://www.11ty.dev)
