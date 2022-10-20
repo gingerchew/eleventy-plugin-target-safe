@@ -2,13 +2,6 @@
 // {{ 'Steph' | hello | safe }}
 const { Transformer } = require('./index.js');
 
-const now = () => {
-  const [ s, ns ] = process.hrtime();
-  const now = s * 1000 + ns / 1000000
-
-  return parseInt(now.toFixed(3));
-}
-
 module.exports = (eleventyConfig, options = {}) => {
   // Define defaults for your plugin config
   const defaults = {
@@ -32,9 +25,6 @@ module.exports = (eleventyConfig, options = {}) => {
 
   // You can create more than filters as a plugin, but here's an example
   eleventyConfig.addTransform("safer-rel", (content, outputPath) => {
-    const start = now();
-    const transformedContent = Transformer(content, _options);
-    console.log('[Safer Rel] Transformation completed in ' + (now() - start) + 'ms');
-    return transformedContent;
+    return Transformer(content, _options);
   });
 };
