@@ -1,6 +1,7 @@
 # Keep your outbound links safe
 
-Link tags `<a>` with the `target` attribute may sometimes need a little extra care to keep them safe for users. This plugin is meant to do that for you automatically.
+Link tags (`<a>`) with the `target` attribute may sometimes need a little extra care. This plugin is meant to do that for you automatically.
+
 ## Usage
 
 Install using your package manager of choice
@@ -21,6 +22,15 @@ module.exports = (eleventyConfig) => {
 };
 ```
 
+## Example
+
+```html
+<!-- before -->
+<a target="_blank" href="https://website.com/">Unsafe Outbound Link</a>
+<!-- after -->
+<a target="_blank" href="https://website.com/" rel="noopener">Safe Outbound Link</a>
+```
+
 ## Config Options
 
 | Option      | Type | Default       | Explanation |
@@ -29,6 +39,11 @@ module.exports = (eleventyConfig) => {
 | follower | boolean | false | `rel="nofollower"` useful for blogs that don't want site crawlers to follow outbound links. |
 | referrer | boolean | false | `rel="noreferrer"` [Read more here.](https://developer.mozilla.org/en-US/docs/Web/HTML/Link_types/noreferrer).
 
+## Considerations
+
+The world of web development is constantly changing. It is entirely possible you are writing code with a bias from someone who read a StackOverflow question 10 years ago, and that code is now in the browser and you just don't know it. That's why I wanted to include these two articles that talk specifically about what the `rel="noopener"` attribute does, and come from sources that are reliable.
+
+Check out this [article](https://jakearchibald.com/2016/performance-benefits-of-rel-noopener/) by Jake Archibald. There is also this note on [MDN](https://developer.mozilla.org/en-US/docs/Web/HTML/Link_types/noopener), that in browsers today, adding `target="_blank"` implicitly adds `rel="noopener"`. 
 
 ## Future
 
