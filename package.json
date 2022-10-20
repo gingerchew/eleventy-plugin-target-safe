@@ -28,7 +28,7 @@
     "url": "https://github.com/gingerchew/eleventy-plugin-target-safe/issues"
   },
   "devDependencies": {
-    "@11ty/eleventy": "^0.11.1",
+    "@11ty/eleventy": "1.0.2",
     "kleur": "^4.1.5"
   },
   "dependencies": {
