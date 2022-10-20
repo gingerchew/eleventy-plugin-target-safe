@@ -20,7 +20,7 @@ function Transformer(content, config) {
 
         if (referrer && !(_rel.includes(RELVALUES[2]))) _rel.push(RELVALUES[2]);
         
-        link.setAttribute('rel', _rel.join(' '));
+        link.setAttribute('rel', _rel.join(' ').trim());
     }
 
     return handler.getSerializedDOM();
