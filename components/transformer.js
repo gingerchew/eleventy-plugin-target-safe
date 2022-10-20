@@ -1,4 +1,3 @@
-const kleur = require('kleur/colors');
 const { RELVALUES } = require('./constants.js');
 const DOMHandler = require('./domhandler.js');
 

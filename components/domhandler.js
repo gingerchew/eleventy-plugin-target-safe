@@ -1,4 +1,3 @@
-const kleur = require('kleur/colors');
 const { JSDOM } = require('jsdom');
 const { SAFETARGETS } = require('./constants.js');
 
