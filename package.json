@@ -1,8 +1,8 @@
 {
-  "name": "eleventy-plugin-safer-rel",
+  "name": "eleventy-plugin-target-safe",
   "version": "0.5.1",
   "description": "Automatically adds noopener to unsafe links",
-  "homepage": "https://github.com/gingerchew/eleventy-plugin-safer-rel",
+  "homepage": "https://github.com/gingerchew/eleventy-plugin-target-safe",
   "main": ".eleventy.js",
   "scripts": {
     "start": "eleventy --serve",
@@ -11,7 +11,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/gingerchew/eleventy-plugin-safer-rel"
+    "url": "git+https://github.com/gingerchew/eleventy-plugin-target-safe"
   },
   "keywords": [
     "11ty",
@@ -25,13 +25,11 @@
   },
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/gingerchew/eleventy-plugin-safer-rel/issues"
+    "url": "https://github.com/gingerchew/eleventy-plugin-target-safe/issues"
   },
   "devDependencies": {
     "@11ty/eleventy": "^0.11.1",
+    "jsdom": "^20.0.1",
     "kleur": "^4.1.5"
-  },
-  "dependencies": {
-    "jsdom": "^20.0.1"
   }
 }
