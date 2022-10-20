@@ -24,7 +24,8 @@ module.exports = (eleventyConfig, options = {}) => {
   const _options = Object.assign({}, defaults, options);
 
   // You can create more than filters as a plugin, but here's an example
-  eleventyConfig.addTransform("safer-rel", (content, outputPath) => {
+  eleventyConfig.addTransform("safer-rel", function(content, outputPath) {
+    if (!this.outputPath.endsWith('.html')) return content;
     return Transformer(content, _options);
   });
 };
