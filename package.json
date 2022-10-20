@@ -1,6 +1,6 @@
 {
   "name": "eleventy-plugin-target-safe",
-  "version": "0.5.2",
+  "version": "0.5.3",
   "description": "Automatically adds noopener to unsafe links",
   "homepage": "https://github.com/gingerchew/eleventy-plugin-target-safe",
   "main": ".eleventy.js",
@@ -29,7 +29,9 @@
   },
   "devDependencies": {
     "@11ty/eleventy": "^0.11.1",
-    "jsdom": "^20.0.1",
     "kleur": "^4.1.5"
+  },
+  "dependencies": {
+    "jsdom": "^20.0.1"
   }
 }
