@@ -30,7 +30,14 @@ module.exports = (eleventyConfig) => {
 | referrer | boolean | false | `rel="noreferrer"` [Read more here.](https://developer.mozilla.org/en-US/docs/Web/HTML/Link_types/noreferrer).
 
 
+## Future
+
+- [ ] Forms and other potentially unsafe `target` elements
+- [ ] Review dependencies and see what can be removed
+- [ ] ???
+
 ## Credits
 
 [11ty](https://www.11ty.dev)
+
 [11ty Plugin Template](https://github.com/5t3ph/eleventy-plugin-template)
