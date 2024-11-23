@@ -1,6 +1,7 @@
 # Keep your outbound links safe
 
->[notice] Good news! You probably don't need this any more. Most browsers do this automatically now.
+> [!NOTE]
+> Good news! You probably don't need this any more. Most browsers do this automatically now.
 
 Link tags (`<a>`) with the `target` attribute may sometimes need a little extra care. This plugin is meant to do that for you automatically.
 
