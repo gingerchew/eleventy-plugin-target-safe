@@ -1,7 +1,7 @@
 # Keep your outbound links safe
 
 > [!NOTE]
-> Good news! You probably don't need this any more. Most browsers do this automatically now.
+> Good news! You probably don't need this any more. [Most browsers do this automatically now.](https://werd.io/2024/browsers-imply-noopener-for-links-in-new-tab)
 
 Link tags (`<a>`) with the `target` attribute may sometimes need a little extra care. This plugin is meant to do that for you automatically.
 
